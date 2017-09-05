@@ -36,9 +36,11 @@ public class Employee {
         this.ssn = ssn;
     }
     
-    private void simpleDateFormatDate() {
+    private void simpleDateFormatDate(String index) {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);  
+        String fmtDate = sdf.format(orientationDate);
+        System.out.println(firstName + " " + lastName + index
+            + fmtDate);
     }
     
     //This is my Parent method that calls the helper methods.
@@ -53,19 +55,15 @@ public class Employee {
     // would only do this once, upon being hired.
     private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
-        simpleDateFormatDate();        
-        System.out.println(firstName + " " + lastName + " met with Hr on "
-            + fmtDate);
+        simpleDateFormatDate(" met with Hr on ");        
+        
     }
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.:
     private void meetDepartmentStaff() {
         metDeptStaff = true;
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);        
-        System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
-            + fmtDate);
+        simpleDateFormatDate(" met with Dept. Staff on ");
     }
 
     // Assume this must be performed third. And assume that because department
@@ -73,10 +71,7 @@ public class Employee {
     // independently from other classes.
     public void reviewDeptPolicies() {
         reviewedDeptPolicies = true;
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);        
-        System.out.println(firstName + " " + lastName + " reviewed Dept policies on "
-            + fmtDate);
+        simpleDateFormatDate(" reviewed Dept policies on ");
     }
 
     // Assume this must be performed 4th. And assume that because employees
