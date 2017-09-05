@@ -43,7 +43,7 @@ public class HumanResources {
     public static void main(String[] args) {
         HumanResources hr = new HumanResources();
         hr.hireEmployee("Chad", "Werning", "444-44-4444");
-        hr.hireEmployee("Jim", "Mallas", "555-55-5555");
+        hr.hireEmployee("Jim", "Smith", "555-55-5555");
         //System.out.println(hr.getEmployees());
         for(Employee emp : hr.getEmployees()) {
             System.out.println(emp.toString());
