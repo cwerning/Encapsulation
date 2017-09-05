@@ -10,5 +10,5 @@ package lab4;
  * @author Chad Werning
  */
 public class HumanResources {
-    
+    private String chad;
 }
