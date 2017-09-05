@@ -235,5 +235,9 @@ public class Employee {
         this.reportService = reportService;
     }
     
+    public String toString(){
+        return "Name: " + firstName + " " + lastName + " \nSSN: " + ssn;
+    }
+    
 }
 

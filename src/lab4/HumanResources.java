@@ -29,6 +29,8 @@ public class HumanResources {
     public void orientEmployee(Employee e) {
         e.doFirstTimeOrientation("Cube101");
     }
+    
+    
 
     public List<Employee> getEmployees() {
         return employees;
@@ -40,11 +42,14 @@ public class HumanResources {
 
     public static void main(String[] args) {
         HumanResources hr = new HumanResources();
-        hr.hireEmployee("John", "Doe", "333-33-3333");
-        System.out.println(hr.getEmployees());
-//        for(Employee emp : hr.getEmployees()) {
-//            System.out.println(emp);
-//        }
+        hr.hireEmployee("Chad", "Werning", "444-44-4444");
+        hr.hireEmployee("Jim", "Mallas", "555-55-5555");
+        //System.out.println(hr.getEmployees());
+        for(Employee emp : hr.getEmployees()) {
+            System.out.println(emp.toString());
+        }
 
     }
+    
+    
 }
