@@ -37,10 +37,14 @@ public class Employee {
     }
     
     private void simpleDateFormatDate(String index) {
+       if(index.length() == 0){
+           throw new IllegalArgumentException("Need to add whom the employee met with");
+       }
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         String fmtDate = sdf.format(orientationDate);
         System.out.println(firstName + " " + lastName + index
             + fmtDate);
+       
     }
     
     //This is my Parent method that calls the helper methods.
@@ -78,6 +82,9 @@ public class Employee {
     // sometimes change office locations that this method may need to be called 
     // independently from other classes.
     public void moveIntoCubicle(String cubeId) {
+        if(cubeId.length() == 0){
+            throw new IllegalArgumentException("Employee Needs a cube ID");
+        }
         this.cubeId = cubeId;
         this.movedIn = true;
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
@@ -94,6 +101,9 @@ public class Employee {
     // allowed through validation.
     
     public void setFirstName(String firstName) {
+         if(firstName.length() == 0){
+            throw new IllegalArgumentException("Employee Needs a first name");
+        }
        this.firstName = firstName;
     }
 
@@ -102,6 +112,9 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
+         if(lastName.length() == 0){
+            throw new IllegalArgumentException("Employee Needs a last name");
+        }
        this.lastName = lastName;
     }
 
@@ -110,6 +123,9 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
+         if(ssn.length() == 0){
+            throw new IllegalArgumentException("Employee Needs a ssn");
+        }
         this.ssn = ssn;
     }
 
@@ -119,6 +135,9 @@ public class Employee {
 
     // boolean parameters need no validation
     public void setMetWithHr(boolean metWithHr) {
+         if(metWithHr != true || metWithHr != false){
+            throw new IllegalArgumentException("metWithHR needs to be true or false");
+        }
         this.metWithHr = metWithHr;
     }
 
@@ -127,6 +146,9 @@ public class Employee {
     }
 
     public void setMetDeptStaff(boolean metDeptStaff) {
+         if(metDeptStaff != true || metDeptStaff != false){
+            throw new IllegalArgumentException("metDeptStaff needs to be true or false");
+        }
         this.metDeptStaff = metDeptStaff;
     }
 
@@ -135,6 +157,9 @@ public class Employee {
     }
 
     public void setReviewedDeptPolicies(boolean reviewedDeptPolicies) {
+         if(reviewedDeptPolicies != true || reviewedDeptPolicies != false){
+            throw new IllegalArgumentException("reviewedDeptPolicies  needs to be true or false");
+        }
         this.reviewedDeptPolicies = reviewedDeptPolicies;
     }
 
@@ -143,6 +168,9 @@ public class Employee {
     }
 
     public void setMovedIn(boolean movedIn) {
+         if(movedIn != true || movedIn != false){
+            throw new IllegalArgumentException("reviewedDeptPolicies  needs to be true or false");
+        }
         this.movedIn = movedIn;
     }
 
@@ -152,6 +180,9 @@ public class Employee {
 
     
     public void setCubeId(String cubeId) {
+        if(cubeId.length() == 0){
+           throw new IllegalArgumentException("Need to enter cube ID");
+       }
         this.cubeId = cubeId;
     }
 
@@ -160,5 +191,8 @@ public class Employee {
     }
 
     public void setOrientationDate(Date orientationDate) {
+        if(orientationDate == null){
+           throw new IllegalArgumentException("Need to enter orentation date");
+       }
         this.orientationDate = orientationDate;
     }}
