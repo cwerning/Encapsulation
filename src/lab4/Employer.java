@@ -5,7 +5,7 @@
  */
 package lab4;
 
-import lab4.solution.HrPerson;
+import lab4.HumanResources;
 
 /**
  *
