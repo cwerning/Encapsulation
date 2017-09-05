@@ -35,25 +35,35 @@ public class Employee {
         this.lastName = lastName;
         this.ssn = ssn;
     }
+    
+    private void simpleDateFormatDate(String index) {
+        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+        String fmtDate = sdf.format(orientationDate);
+        System.out.println(firstName + " " + lastName + " met with " + index + " on "
+            + fmtDate);
+    }
+    
+    //This is my Parent method that calls the helper methods.
+    public void newEmployeeProtocol() {
+        meetWithHrForBenefitAndSalryInfo();
+        meetDepartmentStaff();
+        reviewDeptPolicies();
+        moveIntoCubicle(cubeId);
+    }
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.
-    public void meetWithHrForBenefitAndSalryInfo() {
+    private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);        
-        System.out.println(firstName + " " + lastName + " met with Hr on "
-            + fmtDate);
+        simpleDateFormatDate("Hr");        
+       
     }
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.:
-    public void meetDepartmentStaff() {
+    private void meetDepartmentStaff() {
         metDeptStaff = true;
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);        
-        System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
-            + fmtDate);
+        simpleDateFormatDate(" Dept. Staff ");
     }
 
     // Assume this must be performed third. And assume that because department
