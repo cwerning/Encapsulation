@@ -36,11 +36,9 @@ public class Employee {
         this.ssn = ssn;
     }
     
-    private void simpleDateFormatDate(String index) {
+    private void simpleDateFormatDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);
-        System.out.println(firstName + " " + lastName + " met with " + index + " on "
-            + fmtDate);
+        String fmtDate = sdf.format(orientationDate);  
     }
     
     //This is my Parent method that calls the helper methods.
@@ -55,15 +53,19 @@ public class Employee {
     // would only do this once, upon being hired.
     private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
-        simpleDateFormatDate("Hr");        
-       
+        simpleDateFormatDate();        
+        System.out.println(firstName + " " + lastName + " met with Hr on "
+            + fmtDate);
     }
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.:
     private void meetDepartmentStaff() {
         metDeptStaff = true;
-        simpleDateFormatDate(" Dept. Staff ");
+        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+        String fmtDate = sdf.format(orientationDate);        
+        System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
+            + fmtDate);
     }
 
     // Assume this must be performed third. And assume that because department
