@@ -11,4 +11,8 @@ package lab3;
  */
 public class ReportService {
     
+    public void systemOutput(String msg){
+        System.out.println(msg);
+    }
+    
 }
