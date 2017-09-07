@@ -35,15 +35,10 @@ public class Employee {
         this.ssn = ssn;
     }
 
-    private void simpleDateFormatDate(String index) {
-        if (index.length() == 0) {
-            throw new IllegalArgumentException("Need to add whom the employee met with");
-        }
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        String fmtDate = sdf.format(orientationDate);
-
+     public void simpleOutput(String msg) {
+        System.out.println(msg);
     }
-
+     
     //This is my Parent method that calls the helper methods.
     public void newEmployeeProtocol() {
         meetWithHrForBenefitAndSalryInfo();
@@ -58,7 +53,7 @@ public class Employee {
         metWithHr = true;
         DateUtilities du = new DateUtilities();
         du.getFormattedDate(orientationDate);
-        System.out.println(firstName + " " + lastName + " met with HR on "
+        simpleOutput(firstName + " " + lastName + " met with HR on "
                 + du.getFormattedDate(orientationDate));
 
     }
@@ -69,7 +64,7 @@ public class Employee {
         metDeptStaff = true;
         DateUtilities du = new DateUtilities();
         du.getFormattedDate(orientationDate);
-        System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
+        simpleOutput(firstName + " " + lastName + " met with Dept. Staff on "
                 + du.getFormattedDate(orientationDate));
 
     }
@@ -81,7 +76,7 @@ public class Employee {
         reviewedDeptPolicies = true;
         DateUtilities du = new DateUtilities();
         du.getFormattedDate(orientationDate);
-        System.out.println(firstName + " " + lastName + " reviewed Dept Policies on "
+        simpleOutput(firstName + " " + lastName + " reviewed Dept Policies on "
                 + du.getFormattedDate(orientationDate));
 
     }
@@ -97,7 +92,7 @@ public class Employee {
         this.movedIn = true;
         DateUtilities du = new DateUtilities();
         du.getFormattedDate(orientationDate);
-        System.out.println(firstName + " " + lastName + " moved into cubicle "
+        simpleOutput(firstName + " " + lastName + " moved into cubicle "
                 + cubeId + " on " + du.getFormattedDate(orientationDate));
 
     }
